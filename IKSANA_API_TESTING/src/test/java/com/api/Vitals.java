@@ -800,6 +800,7 @@ public class Vitals extends BaseClass {
                 try {
                     Assert.assertEquals(StatusCode5, 200);
                     String s3 = getBodyData(response5).toString();
+                    if(s3!=null){
                     JsonObject jsonObject3 = JsonParser.parseString(s3).getAsJsonObject();
                     String d6 = jsonObject3.get("lastVital").getAsString();
                     if (d6 != null) {
@@ -808,6 +809,10 @@ public class Vitals extends BaseClass {
                         resultsCreateNewCell("Vitals", 41, 10, "Fail");
                         break;
                     }
+                }else{
+                    resultsCreateNewCell("Vitals", 41, 10, "Fail");
+                    break;
+                }
                 } catch (AssertionError e) {
                     resultsCreateNewCell("Vitals", 41, 10, "Fail");
                     break;

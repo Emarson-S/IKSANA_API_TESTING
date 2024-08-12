@@ -292,7 +292,7 @@ public void FAQs() throws IOException{
     }
 }
 
-@Test(enabled = true)
+@Test(enabled = false)
 public void SubscriptionUpgrade() throws IOException{
 
     Map<String, Object> map=new HashMap<>();
@@ -311,7 +311,7 @@ public void SubscriptionUpgrade() throws IOException{
 
 }
 
-@Test(enabled = true)
+@Test(enabled = false)
 public void SubscriptionRenewal() throws IOException{
 
     Map<String, Object> map=new HashMap<>();

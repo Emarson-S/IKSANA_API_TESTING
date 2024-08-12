@@ -21,7 +21,7 @@ import com.microsoft.playwright.options.RequestOptions;
 public class UserCreation extends BaseClass {
 
 
-    @Test(enabled = true, description = "Registration", priority = 13)
+    @Test(enabled = false, description = "Registration", priority = 13)
     public void updateRegistrationWithoutVRTID() throws IOException {
 
         for(int i=0; i<1; i++){

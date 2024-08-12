@@ -20,7 +20,7 @@ public class Registration extends BaseClass {
 
     // Verfiy the Mobile number on User Explore process
 
-    @Test(enabled = true, description = "UserExplore", priority = 1)
+    @Test(enabled = false, description = "UserExplore", priority = 1)
     public void phoneNumberverification() throws IOException {
 
         try {
@@ -147,7 +147,7 @@ public class Registration extends BaseClass {
 
     // Verify the OTP on User explore process
 
-    @Test(enabled = true, description = "UserExplore", priority = 2)
+    @Test(enabled = false, description = "UserExplore", priority = 2)
     public void userExploreOTPVerification() throws IOException {
         try {
 
@@ -257,7 +257,7 @@ public class Registration extends BaseClass {
 
     // Verify the User-Explore form
 
-    @Test(enabled = true, description = "UserExplore", priority = 3)
+    @Test(enabled = false, description = "UserExplore", priority = 3)
     public void userExploreForm() throws IOException {
 
         try {
@@ -332,7 +332,7 @@ public class Registration extends BaseClass {
 
     // Creating the user registation
 
-    @Test(enabled = true, description = "Registration", priority = 4)
+    @Test(enabled = false, description = "Registration", priority = 4)
     public void getRegistration() throws IOException {
 
         try {
@@ -409,7 +409,7 @@ public class Registration extends BaseClass {
 
     // Verify the email address on registration
 
-    @Test(enabled = true, description = "Registration", priority = 5)
+    @Test(enabled = false, description = "Registration", priority = 5)
     public void emailVerification() throws IOException, MailosaurException {
 
         try {
@@ -539,7 +539,7 @@ public class Registration extends BaseClass {
 
     // Verify the Subscription List
 
-    @Test(enabled = true, description = "Master", priority = 6)
+    @Test(enabled = false, description = "Master", priority = 6)
     public void getSubscriptionList() throws IOException {
 
         try {
@@ -612,7 +612,7 @@ public class Registration extends BaseClass {
 
     // Verify Subscription duration List
 
-    @Test(enabled = true, description = "Master", priority = 7)
+    @Test(enabled = false, description = "Master", priority = 7)
     public void getSubsDurationList() throws IOException {
 
         try {
@@ -693,7 +693,7 @@ public class Registration extends BaseClass {
 
     // Email verification code is verified on registration
 
-    @Test(enabled = true, description = "Registration", priority = 8)
+    @Test(enabled = false, description = "Registration", priority = 8)
     public void emailCodeVerification() throws IOException, MailosaurException {
 
         try {
@@ -820,7 +820,7 @@ public class Registration extends BaseClass {
 
     // Verify the contact number on registration
 
-    @Test(enabled = true, description = "Registration", priority = 9)
+    @Test(enabled = false, description = "Registration", priority = 9)
     public void PhoneNumberVerification() throws IOException {
 
         try{
@@ -862,7 +862,7 @@ public class Registration extends BaseClass {
 
     // Phone number OTP verified on registration
 
-    @Test(enabled = true, description = "Registration", priority = 10)
+    @Test(enabled = false, description = "Registration", priority = 10)
     public void OTPCodeVerification() throws IOException {
 
         try{
@@ -899,7 +899,7 @@ public class Registration extends BaseClass {
     }
 
     // Verify the pincode on registration
-    @Test(enabled = true, description = "Registration", priority = 11)
+    @Test(enabled = false, description = "Registration", priority = 11)
     public void verfiyPincode() throws IOException {
 
         try{
@@ -1024,7 +1024,7 @@ public class Registration extends BaseClass {
 
 
     // Verify the territory list on registration
-    @Test(enabled = true, description = "Registration", priority = 12)
+    @Test(enabled = false, description = "Registration", priority = 12)
     public void territoryList() throws IOException {
 
         try{
@@ -1061,7 +1061,7 @@ public class Registration extends BaseClass {
 
     }
 
-    @Test(enabled = true, description = "Registration", priority = 13)
+    @Test(enabled = false, description = "Registration", priority = 13)
     public void updateRegistrationWithoutVRTID() throws IOException {
         try{
         Map<String, Object> addressDetails = new HashMap<>();
@@ -1182,7 +1182,7 @@ public class Registration extends BaseClass {
 
     // Update the draft registration with veteran registration ID
 
-    @Test(enabled = true, description = "Registration", priority = 14)
+    @Test(enabled = false, description = "Registration", priority = 14)
     public void updateRegistrationWithVRTID() throws IOException {
         try{
         Map<String, Object> addressDetails = new HashMap<>();

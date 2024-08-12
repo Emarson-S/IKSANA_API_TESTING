@@ -180,7 +180,7 @@ public class Master extends BaseClass {
                map4.put("organizationCode", toReadDataFromExcel("Master", 2, 1) + "L");
                map4.put("promoCodeType", "Common");
                map4.put("status", "Active");
-               APIResponse response4 = postRequestWithToken("rest/api/v1/organization", getAdminToken(), map4);
+               APIResponse response4 = postRequestWithToken("rest/api/v1/organization", "Bearer "+toReadDataFromExcel("Users",4, 8), map4);
                int StatusCode4 = response4.status();
                System.out.println("StatusCode4--->" + StatusCode4);
                try {
@@ -408,7 +408,7 @@ public class Master extends BaseClass {
                map3.put("promoCodeType", "Common");
                map3.put("status", "Active");
                map3.put("id", toReadDataFromExcel("Master", 3, 1));
-               APIResponse response3 = putRequestWithToken("rest/api/v1/organization", getAdminToken(), map3);
+               APIResponse response3 = putRequestWithToken("rest/api/v1/organization", "Bearer "+toReadDataFromExcel("Users",4, 8), map3);
                int StatusCode3 = response3.status();
                System.out.println("StatusCode3--->" + StatusCode3);
                System.out.println(getBodyData(response3).toString());
@@ -492,7 +492,7 @@ public class Master extends BaseClass {
                // <----------Master_TC_18------>
                APIResponse response2 = request().get(DevOrigin + "rest/api/v1/organizationss", RequestOptions.create()
                          .setQueryParam("page", "0").setQueryParam("value", "")
-                         .setHeader("Authorization", getAdminToken()));
+                         .setHeader("Authorization", "Bearer "+toReadDataFromExcel("Users",4, 8)));
                int StstusCode2 = response2.status();
                System.out.println("StstusCode2--->" + StstusCode2);
                try {
@@ -621,7 +621,7 @@ public class Master extends BaseClass {
           }
 
           // <--------- Master_TC_25 -------------->
-          APIResponse response2=postRequestWithToken("rest/api/v1/subscriptionPlan", getAdminToken(), map1);
+          APIResponse response2=postRequestWithToken("rest/api/v1/subscriptionPlan", "Bearer "+toReadDataFromExcel("Users",4, 8), map1);
           int StatusCode2=response2.status();
           System.out.println("StatusCode2--->"+StatusCode2);
           try {

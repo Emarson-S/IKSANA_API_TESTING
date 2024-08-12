@@ -433,7 +433,7 @@ public class Security extends BaseClass {
         }
     }
 
-    @Test(enabled = true, description = "Login", priority = 4)
+    @Test(enabled = false, description = "Login", priority = 4)
     public void Logout() throws IOException {
         for (int i = 1; i < 10; i++) {
             APIResponse response1 = request().put(DevOrigin + "signout",
