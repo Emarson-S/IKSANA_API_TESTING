@@ -30,107 +30,105 @@ import com.microsoft.playwright.options.RequestOptions;
 
 public class BaseClass {
 
-public static String DevOrigin="https://api-dev.iksana.life/";
-public static String Generateotp="https://2factor.in/API/V1/de54a588-09d5-11ee-addf-0200cd936042/SMS/"+ "countryCode" + "phoneNo" +"/AUTOGEN2/WelldercareOTP";
-public static String Validateotp="https://2factor.in/API/V1/de54a588-09d5-11ee-addf-0200cd936042/SMS/VERIFY/" + "sessionId" + "/" + "otp";
+	public static String DevOrigin = "https://api-dev.iksana.life/";
+	public static String Generateotp = "https://2factor.in/API/V1/de54a588-09d5-11ee-addf-0200cd936042/SMS/"
+			+ "countryCode" + "phoneNo" + "/AUTOGEN2/WelldercareOTP";
+	public static String Validateotp = "https://2factor.in/API/V1/de54a588-09d5-11ee-addf-0200cd936042/SMS/VERIFY/"
+			+ "sessionId" + "/" + "otp";
 
-public static List<String> getContentTypes(){
-	List<String> contentType=new ArrayList<>();
-	contentType.add("*/*");
-	contentType.add("application/java-archive");
-	contentType.add("application/octet-stream");
-	contentType.add("application/pdf");
-	contentType.add("application/xhtml+xml");
-	contentType.add("application/ld+json");
-	contentType.add("application/xml");
-	contentType.add("application/x-www-form-urlencoded");
-	contentType.add("audio/mpeg");
-	contentType.add("image/x-icon");
-	contentType.add("image/jpeg");
-	contentType.add("multipart/form-data");
-	contentType.add("text/javascript");
-	contentType.add("application/vnd.ms-excel");
-	return contentType;
-}
+	public static List<String> getContentTypes() {
+		List<String> contentType = new ArrayList<>();
+		contentType.add("*/*");
+		contentType.add("application/java-archive");
+		contentType.add("application/octet-stream");
+		contentType.add("application/pdf");
+		contentType.add("application/xhtml+xml");
+		contentType.add("application/ld+json");
+		contentType.add("application/xml");
+		contentType.add("application/x-www-form-urlencoded");
+		contentType.add("audio/mpeg");
+		contentType.add("image/x-icon");
+		contentType.add("image/jpeg");
+		contentType.add("multipart/form-data");
+		contentType.add("text/javascript");
+		contentType.add("application/vnd.ms-excel");
+		return contentType;
+	}
 
+	public static APIRequestContext request() {
+		Playwright playwright = Playwright.create();
+		APIRequest Apirequest = playwright.request();
+		APIRequestContext content = Apirequest.newContext();
+		return content;
+	}
 
+	// Get request with Authendication
 
-public static APIRequestContext request(){
-    Playwright playwright = Playwright.create();
-    APIRequest Apirequest= playwright.request();
-    APIRequestContext content=Apirequest.newContext();
-    return content;
-}
+	public static APIResponse getRequestWithToken(String URL, String authendication) {
+		Playwright playwright = Playwright.create();
+		APIRequest Apirequest = playwright.request();
+		APIRequestContext content = Apirequest.newContext();
+		APIResponse response = content.get(DevOrigin + URL,
+				RequestOptions.create().setHeader("Authorization", authendication).setHeader("Application",
+						"Iksana-Base"));
+		return response;
+	}
 
+	// Get request without Authendication
 
-// Get request with Authendication
+	public static APIResponse getRequestWithoutToken(String URL) {
+		Playwright playwright = Playwright.create();
+		APIRequest Apirequest = playwright.request();
+		APIRequestContext content = Apirequest.newContext();
+		APIResponse response = content.get(DevOrigin + URL,
+				RequestOptions.create());
+		return response;
+	}
 
-public static APIResponse getRequestWithToken(String URL, String authendication){
-    Playwright playwright = Playwright.create();
-    APIRequest Apirequest= playwright.request();
-    APIRequestContext content=Apirequest.newContext();
-    APIResponse response=content.get(DevOrigin+URL, 
-    RequestOptions.create().setHeader("Authorization", authendication).setHeader("Application", "Iksana-Base"));
-    return response;
-}
+	// Post request with Authendication
 
+	public static APIResponse postRequestWithToken(String URL, String authendication, Object data) {
+		Playwright playwright = Playwright.create();
+		APIRequest Apirequest = playwright.request();
+		APIRequestContext content = Apirequest.newContext();
+		APIResponse response = content.post(DevOrigin + URL,
+				RequestOptions.create().setHeader("Authorization", authendication)
+						.setHeader("Content-Type", "application/json").setHeader("Application", "Iksana-Base")
+						.setData(data));
+		return response;
+	}
 
-// Get request without Authendication
+	// Post request without Authendication
 
-public static APIResponse getRequestWithoutToken(String URL){
-    Playwright playwright = Playwright.create();
-    APIRequest Apirequest= playwright.request();
-    APIRequestContext content=Apirequest.newContext();
-    APIResponse response=content.get(DevOrigin+URL, 
-    RequestOptions.create());
-    return response;
-}
+	public static APIResponse postRequestWithoutToken(String URL, String Type, Object data) {
+		Playwright playwright = Playwright.create();
+		APIRequest Apirequest = playwright.request();
+		APIRequestContext content = Apirequest.newContext();
+		APIResponse response = content.post(DevOrigin + URL,
+				RequestOptions.create().setHeader("Content-Type", "application/json").setHeader("channel", Type)
+						.setHeader("Application", "Iksana-Base").setData(data));
+		return response;
+	}
 
+	// Put request with Authendication
 
-// Post request with Authendication
+	public static APIResponse putRequestWithToken(String URL, String authendication, Object data) {
+		Playwright playwright = Playwright.create();
+		APIRequest Apirequest = playwright.request();
+		APIRequestContext content = Apirequest.newContext();
+		APIResponse response = content.put(DevOrigin + URL,
+				RequestOptions.create().setHeader("Authorization", authendication)
+						.setHeader("Content-Type", "application/json").setData(data));
+		return response;
+	}
 
-public static APIResponse postRequestWithToken(String URL, String authendication, Object data){
-    Playwright playwright = Playwright.create();
-    APIRequest Apirequest= playwright.request();
-    APIRequestContext content=Apirequest.newContext();
-    APIResponse response=content.post(DevOrigin+URL, 
-    RequestOptions.create().setHeader("Authorization", authendication).
-    setHeader("Content-Type", "application/json").setHeader("Application", "Iksana-Base").setData(data));
-    return response;
-}
+	// get response body data from API
 
-// Post request without Authendication
-
-public static APIResponse postRequestWithoutToken(String URL, String Type ,Object data){
-    Playwright playwright = Playwright.create();
-    APIRequest Apirequest= playwright.request();
-    APIRequestContext content=Apirequest.newContext();
-    APIResponse response=content.post(DevOrigin+URL, 
-    RequestOptions.create().setHeader("Content-Type", "application/json").setHeader("channel",Type).setHeader("Application", "Iksana-Base").setData(data));
-    return response;
-}
-
-
-// Put request with Authendication
-
-public static APIResponse putRequestWithToken(String URL, String authendication, Object data){
-    Playwright playwright = Playwright.create();
-    APIRequest Apirequest= playwright.request();
-    APIRequestContext content=Apirequest.newContext();
-    APIResponse response=content.put(DevOrigin+URL, 
-    RequestOptions.create().setHeader("Authorization", authendication).
-    setHeader("Content-Type", "application/json").setData(data));
-    return response;
-}
-
-
-// get response body data from API
-
-public static JsonNode getBodyData(APIResponse response) throws IOException{
-    ObjectMapper objectMapper=new ObjectMapper();
-    JsonNode results=objectMapper.readTree(response.body());
-    return results;
-}
+	public static JsonNode getBodyData(APIResponse response) throws IOException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		JsonNode results = objectMapper.readTree(response.body());
+		return results;
+	}
 
 	// create new Excel Sheet
 	public static void tocreateExcelSheet(String fileName, String sheetName, int rowNo, int cellNo, String value)
@@ -176,7 +174,6 @@ public static JsonNode getBodyData(APIResponse response) throws IOException{
 		FileOutputStream fo = new FileOutputStream(f);
 		b.write(fo);
 	}
-
 
 	public static void resultsCreateNewCell(String sheetName, int rowNo, int cellNo, String value)
 			throws IOException {
@@ -241,78 +238,76 @@ public static JsonNode getBodyData(APIResponse response) throws IOException{
 
 	}
 
-
 	// User Token methods
 
 	public static String token;
 
-	public static String getUSVToken() throws IOException{
-		token="Bearer "+toReadDataFromExcel("Users", 2, 1);
+	public static String getUSVToken() throws IOException {
+		token = "Bearer " + toReadDataFromExcel("Users", 2, 1);
 		return token;
 	}
 
-	public static String getSFToken() throws IOException{
-		token="Bearer "+toReadDataFromExcel("Users", 2, 2);
+	public static String getSFToken() throws IOException {
+		token = "Bearer " + toReadDataFromExcel("Users", 2, 2);
 		return token;
 	}
 
-	public static String getVTToken() throws IOException{
-		token="Bearer "+toReadDataFromExcel("Users", 2, 3);
+	public static String getVTToken() throws IOException {
+		token = "Bearer " + toReadDataFromExcel("Users", 2, 3);
 		return token;
 	}
 
-	public static String getFMToken() throws IOException{
-		token="Bearer "+toReadDataFromExcel("Users", 2, 4);
+	public static String getFMToken() throws IOException {
+		token = "Bearer " + toReadDataFromExcel("Users", 2, 4);
 		return token;
 	}
 
-	public static String getAdminToken() throws IOException{
-		token="Bearer "+toReadDataFromExcel("Users", 2, 8);
+	public static String getAdminToken() throws IOException {
+		token = "Bearer " + toReadDataFromExcel("Users", 2, 8);
 		return token;
 	}
 
-	public static String getCPToken() throws IOException{
-		token="Bearer "+toReadDataFromExcel("Users", 2, 9);
+	public static String getCPToken() throws IOException {
+		token = "Bearer " + toReadDataFromExcel("Users", 2, 9);
 		return token;
 	}
 
-	public static String getCMToken() throws IOException{
-		token="Bearer "+toReadDataFromExcel("Users", 2, 5);
+	public static String getCMToken() throws IOException {
+		token = "Bearer " + toReadDataFromExcel("Users", 2, 5);
 		return token;
 	}
 
-	public static String getDRToken() throws IOException{
-		token="Bearer "+toReadDataFromExcel("Users", 2, 6);
+	public static String getDRToken() throws IOException {
+		token = "Bearer " + toReadDataFromExcel("Users", 2, 6);
 		return token;
 	}
 
-	public static String getCGToken() throws IOException{
-		token="Bearer "+toReadDataFromExcel("Users", 2, 7);
+	public static String getCGToken() throws IOException {
+		token = "Bearer " + toReadDataFromExcel("Users", 2, 7);
 		return token;
 	}
-
 
 	// UserID methods
 
 	public static String userId;
 
-	public static String getUSVuserID() throws IOException{
-		userId=toReadDataFromExcel("Users", 1, 1);
+	public static String getUSVuserID() throws IOException {
+		userId = toReadDataFromExcel("Users", 1, 1);
 		return userId;
 	}
 
-	public static String getSFuserID() throws IOException{
-		userId=toReadDataFromExcel("Users", 1, 2);
+	public static String getSFuserID() throws IOException {
+		userId = toReadDataFromExcel("Users", 1, 2);
 		return userId;
 	}
 
-	public static String getVTuserID() throws IOException{
-		userId=toReadDataFromExcel("Users", 1, 3);
+	public static String getVTuserID() throws IOException {
+		userId = toReadDataFromExcel("Users", 1, 3);
 		return userId;
 	}
 
-	public static String getFMuserID() throws IOException{
-		userId=toReadDataFromExcel("Users", 1, 4);
+	public static String getFMuserID() throws IOException {
+		userId = toReadDataFromExcel("Users", 1, 4);
 		return userId;
 	}
 
@@ -320,54 +315,50 @@ public static JsonNode getBodyData(APIResponse response) throws IOException{
 
 	public static String roleId;
 
-	public static String getUSVRoleID() throws IOException{
-		roleId=toReadDataFromExcel("Users", 3, 1);
+	public static String getUSVRoleID() throws IOException {
+		roleId = toReadDataFromExcel("Users", 3, 1);
 		return roleId;
 	}
 
-	public static String getSFRoleID() throws IOException{
-		roleId=toReadDataFromExcel("Users", 3, 2);
+	public static String getSFRoleID() throws IOException {
+		roleId = toReadDataFromExcel("Users", 3, 2);
 		return roleId;
 	}
 
-	public static String getVTRoleID() throws IOException{
-		roleId=toReadDataFromExcel("Users", 3, 3);
+	public static String getVTRoleID() throws IOException {
+		roleId = toReadDataFromExcel("Users", 3, 3);
 		return roleId;
 	}
 
-	public static String getFMRoleID() throws IOException{
-		roleId=toReadDataFromExcel("Users", 3, 4);
+	public static String getFMRoleID() throws IOException {
+		roleId = toReadDataFromExcel("Users", 3, 4);
 		return roleId;
 	}
 
+	// Base64 encryption
 
-	// Base64 encryption  
-
-     public static String encryption(String data){
-		String code=Base64.getEncoder().encodeToString(data.getBytes());
-		return code;  
-	 }
-	
-
+	public static String encryption(String data) {
+		String code = Base64.getEncoder().encodeToString(data.getBytes());
+		return code;
+	}
 
 	// Json verification
-
 
 	public boolean isJSONValid(String test) {
 
 		if (test == null) {
 			return false;
 		}
-    try {
-        new JSONObject(test);
-    } catch (JSONException ex) {
-		try{
-            new JSONArray(test);	
-        } catch (JSONException ex1) {
-            return false;
-        }
-    }
-	return true;
-}
+		try {
+			new JSONObject(test);
+		} catch (JSONException ex) {
+			try {
+				new JSONArray(test);
+			} catch (JSONException ex1) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 }
