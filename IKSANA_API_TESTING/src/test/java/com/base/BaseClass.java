@@ -33,12 +33,6 @@ public class BaseClass {
 public static String DevOrigin="https://api-dev.iksana.life/";
 public static String Generateotp="https://2factor.in/API/V1/de54a588-09d5-11ee-addf-0200cd936042/SMS/"+ "countryCode" + "phoneNo" +"/AUTOGEN2/WelldercareOTP";
 public static String Validateotp="https://2factor.in/API/V1/de54a588-09d5-11ee-addf-0200cd936042/SMS/VERIFY/" + "sessionId" + "/" + "otp";
-public static String AdminToken="Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJ0aGlwYW5AeW9wbWFpbC5jb20iLCJzZXNzaW9uSWQiOiIxNzIzMTg1NDAyMjY3IiwiZXhwIjoxNzIzMjIxNDAyLCJpYXQiOjE3MjMxODU0MDJ9.siN4jXGpqyAOnEqJDJpo5gHWopTcKpLBdh4DqNpvWOk";
-public static String CMToken="Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZW1hdmF0aHkua0BtYXZlbnMtaS5jb20iLCJzZXNzaW9uSWQiOiIxNzExMDkxMTEyODE0IiwiZXhwIjoxNzExMTI3MTEzLCJpYXQiOjE3MTEwOTExMTN9.Wkgs2JigMMu4d8hqYP-4ORiPGTwlL79Iewr4Qs4aU7Y";
-public static String DRToken;
-public static String CPToken;
-public static String ExpiredAdminToken="Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWV2YWJhbGluLnJAbWF2ZW5zLWkuY29tIiwic2Vzc2lvbklkIjoiMTcxMTAxNzU2MDc0NCIsImV4cCI6MTcxMTA1MzU2MSwiaWF0IjoxNzExMDE3NTYxfQ.7BxFv_OC7exRddeJIXe_zsHbnzYab3TfM-YMGBDuias";
-public static String UserToken="Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huaGFua2VAeW9wbWFpbC5jb20iLCJzZXNzaW9uSWQiOiIxNzEyNjM4MzQyMTA2IiwiZXhwIjoxNzE1MjMwMzQyLCJpYXQiOjE3MTI2MzgzNDJ9.5kpwZ_ukuWt0awqpfnQmnGTQQ-0NZJZrHRli1ST-8fc";
 
 public static List<String> getContentTypes(){
 	List<String> contentType=new ArrayList<>();
@@ -101,7 +95,7 @@ public static APIResponse postRequestWithToken(String URL, String authendication
     APIRequestContext content=Apirequest.newContext();
     APIResponse response=content.post(DevOrigin+URL, 
     RequestOptions.create().setHeader("Authorization", authendication).
-    setHeader("Content-Type", "application/json").setData(data));
+    setHeader("Content-Type", "application/json").setHeader("Application", "Iksana-Base").setData(data));
     return response;
 }
 
@@ -141,7 +135,7 @@ public static JsonNode getBodyData(APIResponse response) throws IOException{
 	// create new Excel Sheet
 	public static void tocreateExcelSheet(String fileName, String sheetName, int rowNo, int cellNo, String value)
 			throws IOException {
-		File f = new File("D:\\API_TEST\\Iksana_API_Test\\Files\\Iksana_Inputs\\" + fileName + ".xlsx");
+		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_Inputs\\" + fileName + ".xlsx");
 		FileInputStream fil = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fil);
 		Sheet sh = b.createSheet(sheetName);
@@ -156,7 +150,7 @@ public static JsonNode getBodyData(APIResponse response) throws IOException{
 	// create new row in old Sheet
 	public static void toCreateNewRow(String sheetName, int rowNo, int cellNo, String value)
 			throws IOException {
-		File f = new File("D:\\API_TEST\\Iksana_API_Test\\Files\\Iksana_Inputs.xlsx");
+		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_Inputs.xlsx");
 		FileInputStream fil = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fil);
 		Sheet sh = b.getSheet(sheetName);
@@ -172,7 +166,7 @@ public static JsonNode getBodyData(APIResponse response) throws IOException{
 
 	public static void toCreateNewCell(String sheetName, int rowNo, int cellNo, String value)
 			throws IOException {
-		File f = new File("D:\\API_TEST\\Iksana_API_Test\\Files\\Iksana_Inputs.xlsx");
+		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_Inputs.xlsx");
 		FileInputStream fil = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fil);
 		Sheet sh = b.getSheet(sheetName);
@@ -186,7 +180,7 @@ public static JsonNode getBodyData(APIResponse response) throws IOException{
 
 	public static void resultsCreateNewCell(String sheetName, int rowNo, int cellNo, String value)
 			throws IOException {
-		File f = new File("D:\\API_TEST\\Iksana_API_Test\\Files\\Iksana_API_Testing_Testcases_v0.1.xlsx");
+		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_API_Testing_Testcases_v0.1.xlsx");
 		FileInputStream fil = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fil);
 		Sheet sh = b.getSheet(sheetName);
@@ -200,7 +194,7 @@ public static JsonNode getBodyData(APIResponse response) throws IOException{
 	public static String toReadDataFromExcel(String sheetName, int rowNo, int cellNo)
 			throws IOException {
 
-		File f = new File("D:\\API_TEST\\Iksana_API_Test\\Files\\Iksana_Inputs.xlsx");
+		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_Inputs.xlsx");
 		FileInputStream fin = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fin);
 		Sheet sh = b.getSheet(sheetName);
@@ -225,7 +219,7 @@ public static JsonNode getBodyData(APIResponse response) throws IOException{
 	public static String resultsReadDataFromExcel(String sheetName, int rowNo, int cellNo)
 			throws IOException {
 
-		File f = new File("D:\\API_TEST\\Iksana_API_Test\\Files\\Iksana_API_Testing_Testcases_v0.1.xlsx");
+		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_API_Testing_Testcases_v0.1.xlsx");
 		FileInputStream fin = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fin);
 		Sheet sh = b.getSheet(sheetName);

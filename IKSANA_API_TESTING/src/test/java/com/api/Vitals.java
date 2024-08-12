@@ -101,7 +101,6 @@ public class Vitals extends BaseClass {
             bloodPressure.put("diastolic", "80");
             Map<String, Object> bloodGlucose = new HashMap<>();
             bloodGlucose.put("value", "78");
-            bloodGlucose.put("mealTime", "BeforeMeal");
             Map<String, Object> bloodO2 = new HashMap<>();
             bloodO2.put("value", "67");
             Map<String, Object> heartRate = new HashMap<>();
@@ -120,6 +119,7 @@ public class Vitals extends BaseClass {
             map.put("respiratoryRate", respiratoryRate);
             map.put("heartVariability", heartVariability);
             map.put("veteranId", getUSVuserID());
+            map.put("mealTime", "BeforeMeal");
 
             APIResponse response1 = postRequestWithToken("rest/api/v1/veteran-vital", getUSVToken(), map);
             int StatusCode1 = response1.status();
@@ -186,6 +186,7 @@ public class Vitals extends BaseClass {
             Map<String, Object> map1 = new HashMap<>();
             map1.put("bodyrature", bodyTemperature1);
             map1.put("veteranId", getUSVuserID());
+            map1.put("mealTime", "BeforeMeal");
             APIResponse response4 = postRequestWithToken("rest/api/v1/veteran-vital", getUSVToken(), map1);
             int StatusCode4 = response4.status();
             System.out.println("StatusCode4---->" + StatusCode4);
@@ -231,6 +232,7 @@ public class Vitals extends BaseClass {
                 Map<String, Object> map2 = new HashMap<>();
                 map2.put("bodyTemperature", bodyTemperature);
                 map2.put("veteranId", list2.get(i));
+                map2.put("mealTime", "BeforeMeal");
                 APIResponse response6 = postRequestWithToken("rest/api/v1/veteran-vital", list1.get(i), map2);
                 int StatusCode6 = response6.status();
                 System.out.println("StatusCode6---->" + StatusCode6);
@@ -343,7 +345,6 @@ public class Vitals extends BaseClass {
             bloodPressure.put("diastolic", "80");
             Map<String, Object> bloodGlucose = new HashMap<>();
             bloodGlucose.put("value", "78");
-            bloodGlucose.put("mealTime", "BeforeMeal");
             Map<String, Object> bloodO2 = new HashMap<>();
             bloodO2.put("value", "67");
             Map<String, Object> heartRate = new HashMap<>();
@@ -362,6 +363,7 @@ public class Vitals extends BaseClass {
             map.put("respiratoryRate", respiratoryRate);
             map.put("heartVariability", heartVariability);
             map.put("veteranId", getUSVuserID());
+            map.put("mealTime", "BeforeMeal");
 
             APIResponse response1 = putRequestWithToken("rest/api/v1/veteran-vital", getUSVToken(), map);
             int StatusCode1 = response1.status();
@@ -428,6 +430,7 @@ public class Vitals extends BaseClass {
             Map<String, Object> map1 = new HashMap<>();
             map1.put("bodyrature", bodyTemperature1);
             map1.put("veteranId", getUSVuserID());
+            map1.put("mealTime", "BeforeMeal");
             APIResponse response4 = putRequestWithToken("rest/api/v1/veteran-vital", getUSVToken(), map1);
             int StatusCode4 = response4.status();
             System.out.println("StatusCode4---->" + StatusCode4);
@@ -473,6 +476,7 @@ public class Vitals extends BaseClass {
                 Map<String, Object> map2 = new HashMap<>();
                 map2.put("bodyTemperature", bodyTemperature);
                 map2.put("veteranId", list2.get(i));
+                map2.put("mealTime", "BeforeMeal");
                 APIResponse response6 = putRequestWithToken("rest/api/v1/veteran-vital", list1.get(i), map2);
                 int StatusCode6 = response6.status();
                 System.out.println("StatusCode6---->" + StatusCode6);
@@ -506,24 +510,25 @@ public class Vitals extends BaseClass {
 
     @Test(enabled = true, description = "Vitals",priority = 5)
     public void createNormalVitalDetails() throws IOException{
+
+        for(int i=1; i<5; i++){
         Map<String, Object> bodyTemperature = new HashMap<>();
-        bodyTemperature.put("celsius", "35.6");
-        bodyTemperature.put("fahrenheit", "96");
+        bodyTemperature.put("celsius", toReadDataFromExcel("Vitals", 1, i));
+        bodyTemperature.put("fahrenheit", toReadDataFromExcel("Vitals", 2, i));
         Map<String, Object> bloodPressure = new HashMap<>();
-        bloodPressure.put("systolic", "89");
-        bloodPressure.put("diastolic", "59");
+        bloodPressure.put("systolic", toReadDataFromExcel("Vitals", 3, i));
+        bloodPressure.put("diastolic", toReadDataFromExcel("Vitals", 4, i));
         Map<String, Object> bloodGlucose = new HashMap<>();
-        bloodGlucose.put("value", "69");
-        bloodGlucose.put("mealTime", "BeforeMeal");
+        bloodGlucose.put("value", toReadDataFromExcel("Vitals", 5, i));
         Map<String, Object> bloodO2 = new HashMap<>();
-        bloodO2.put("value", "94");
+        bloodO2.put("value", toReadDataFromExcel("Vitals", 6, i));
         Map<String, Object> heartRate = new HashMap<>();
-        heartRate.put("value", "80");
+        heartRate.put("value", toReadDataFromExcel("Vitals", 7, i));
         Map<String, Object> respiratoryRate = new HashMap<>();
-        respiratoryRate.put("value", "12");
+        respiratoryRate.put("value", toReadDataFromExcel("Vitals", 8, i));
         Map<String, Object> heartVariability = new HashMap<>();
-        heartVariability.put("pNN50", "0");
-        heartVariability.put("rMSSD", "15");
+        heartVariability.put("pNN50", toReadDataFromExcel("Vitals", 9, i));
+        heartVariability.put("rMSSD", toReadDataFromExcel("Vitals", 10, i));
 
         Map<String, Object> map = new HashMap<>();
         map.put("bodyTemperature", bodyTemperature);
@@ -534,6 +539,7 @@ public class Vitals extends BaseClass {
         map.put("respiratoryRate", respiratoryRate);
         map.put("heartVariability", heartVariability);
         map.put("veteranId", getVTuserID());
+        map.put("mealTime", "BeforeMeal");
 
         
         APIResponse response1 = postRequestWithToken("rest/api/v1/veteran-vital", getVTToken(),map);
@@ -541,21 +547,100 @@ public class Vitals extends BaseClass {
 
         System.out.println("StatusCode1---->" + StatusCode1);
 
-        // <----------------Vitals_TC_27------------>
+        // <----------------Vitals_TC_27,Vitals_TC_28, Vitals_TC_29, Vitals_TC_30 ------------>
 
         try {
             Assert.assertEquals(StatusCode1, 200);
             String s1 = getBodyData(response1).toString();
             JsonObject jsonObject3 = JsonParser.parseString(s1).getAsJsonObject();
                     String d3 = jsonObject3.get("code").getAsString();
+                    System.out.println("code :"+d3);
+                    System.out.println(jsonObject3.get("message").getAsString());
+                    if(i==1 || i==2){
                     if (isJSONValid(s1) && d3 != null && d3.equals("0000")) {
-                        resultsCreateNewCell("Vitals", 27, 10, "Pass");
+                        resultsCreateNewCell("Vitals", i+26, 10, "Pass");
                     } else {
-                        resultsCreateNewCell("Vitals", 27, 10, "Fail");
+                        resultsCreateNewCell("Vitals", i+26, 10, "Fail");
                     }
+                }
+                if(i==3 || i==4){
+                    if (isJSONValid(s1) && d3 != null && d3.equals("7777")) {
+                        resultsCreateNewCell("Vitals", i+26, 10, "Pass");
+                    } else {
+                        resultsCreateNewCell("Vitals", i+26, 10, "Fail");
+                    }
+                }
         } catch (AssertionError e) {
-            resultsCreateNewCell("Vitals", 27, 10, "Fail");
+            resultsCreateNewCell("Vitals", i+26, 10, "Fail");
+        
         }
+    }
+
+    for(int i=1; i<5; i++){
+        Map<String, Object> bodyTemperature = new HashMap<>();
+        bodyTemperature.put("celsius", toReadDataFromExcel("Vitals", 1, i));
+        bodyTemperature.put("fahrenheit", toReadDataFromExcel("Vitals", 2, i));
+        Map<String, Object> bloodPressure = new HashMap<>();
+        bloodPressure.put("systolic", toReadDataFromExcel("Vitals", 3, i));
+        bloodPressure.put("diastolic", toReadDataFromExcel("Vitals", 4, i));
+        Map<String, Object> bloodGlucose = new HashMap<>();
+        bloodGlucose.put("value", toReadDataFromExcel("Vitals", 5, i));
+        Map<String, Object> bloodO2 = new HashMap<>();
+        bloodO2.put("value", toReadDataFromExcel("Vitals", 6, i));
+        Map<String, Object> heartRate = new HashMap<>();
+        heartRate.put("value", toReadDataFromExcel("Vitals", 7, i));
+        Map<String, Object> respiratoryRate = new HashMap<>();
+        respiratoryRate.put("value", toReadDataFromExcel("Vitals", 8, i));
+        Map<String, Object> heartVariability = new HashMap<>();
+        heartVariability.put("pNN50", toReadDataFromExcel("Vitals", 9, i));
+        heartVariability.put("rMSSD", toReadDataFromExcel("Vitals", 10, i));
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("bodyTemperature", bodyTemperature);
+        map.put("bloodPressure", bloodPressure);
+        map.put("bloodGlucose", bloodGlucose);
+        map.put("bloodO2", bloodO2);
+        map.put("heartRate", heartRate);
+        map.put("respiratoryRate", respiratoryRate);
+        map.put("heartVariability", heartVariability);
+        map.put("veteranId", getVTuserID());
+        map.put("mealTime", "BeforeMeal");
+
+        
+        APIResponse response1 = putRequestWithToken("rest/api/v1/veteran-vital", getVTToken(),map);
+        int StatusCode1 = response1.status();
+
+        System.out.println("StatusCode1---->" + StatusCode1);
+
+        // <----------------Vitals_TC_31,Vitals_TC_32, Vitals_TC_33, Vitals_TC_34 ------------>
+
+        try {
+            Assert.assertEquals(StatusCode1, 200);
+            String s1 = getBodyData(response1).toString();
+            JsonObject jsonObject3 = JsonParser.parseString(s1).getAsJsonObject();
+                    String d3 = jsonObject3.get("code").getAsString();
+                    System.out.println("code :"+d3);
+                    System.out.println(jsonObject3.get("message").getAsString());
+                    if(i==1 || i==2){
+                    if (isJSONValid(s1) && d3 != null && d3.equals("0000")) {
+                        resultsCreateNewCell("Vitals", i+30, 10, "Pass");
+                    } else {
+                        resultsCreateNewCell("Vitals", i+30, 10, "Fail");
+                    }
+                }
+                if(i==3 || i==4){
+                    if (isJSONValid(s1) && d3 != null && d3.equals("2222")) {
+                        resultsCreateNewCell("Vitals", i+30, 10, "Pass");
+                    } else {
+                        resultsCreateNewCell("Vitals", i+30, 10, "Fail");
+                    }
+                }
+        } catch (AssertionError e) {
+            resultsCreateNewCell("Vitals", i+30, 10, "Fail");
+        
+        }
+    }
+    
     }
 
     
@@ -603,7 +688,7 @@ public class Vitals extends BaseClass {
             // <----------------Vitals_TC_22------------>
 
             APIResponse response2 = getRequestWithToken(
-                    "rest/api/v1/getVitalStatistics/" + getVTToken() + "/BloodPressure/oneWeek", CMToken);
+                    "rest/api/v1/getVitalStatistics/" + getVTToken() + "/BloodPressure/oneWeek", getCMToken());
             int StatusCode2 = response2.status();
             System.out.println("StatusCode2---->" + StatusCode2);
             try {

@@ -303,7 +303,7 @@ public void SubscriptionUpgrade() throws IOException{
     map.put("tax", "0");
     map.put("planStatus", "Active");
     map.put("duration", "6");
-    APIResponse response=putRequestWithToken("rest/api/v1/update-veteranSubscription", UserToken, map);
+    APIResponse response=putRequestWithToken("rest/api/v1/update-veteranSubscription", getUSVToken(), map);
     int StatusCode=response.status();
     System.out.println(StatusCode);
     String body=getBodyData(response).toString();
@@ -321,7 +321,7 @@ public void SubscriptionRenewal() throws IOException{
     map.put("userId", "1711547610549");
     map.put("paid", true);
     map.put("duration", "6");
-    APIResponse response=putRequestWithToken("rest/api/v1/plan-renewal", UserToken, map);
+    APIResponse response=putRequestWithToken("rest/api/v1/plan-renewal", getUSVToken(), map);
     int StatusCode=response.status();
     System.out.println(StatusCode);
     String body=getBodyData(response).toString();

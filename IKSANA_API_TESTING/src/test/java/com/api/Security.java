@@ -434,7 +434,7 @@ public class Security extends BaseClass {
 
     @Test(enabled = false, priority = 3)
     public void Logout() throws IOException {
-        for (int i = 1; i < 5; i++) {
+        for (int i = 1; i < 10; i++) {
             APIResponse response1 = request().put(DevOrigin + "signout",
                     RequestOptions.create().setHeader("Authorization", "Bearer " + toReadDataFromExcel("Users", 2, i)).setHeader("Application", "Iksana-Base"));
             int StatusCode1 = response1.status();
@@ -454,8 +454,7 @@ public class Security extends BaseClass {
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
-        LoginVerifyPhone();
-        LoginWithOTP();
+        
         }
         }
 

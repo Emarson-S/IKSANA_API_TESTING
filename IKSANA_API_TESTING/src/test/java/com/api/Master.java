@@ -27,7 +27,7 @@ public class Master extends BaseClass {
                map1.put("promoCodeType", "Common");
                map1.put("status", "Active");
 
-               APIResponse response1 = postRequestWithToken("rest/api/v1/organization", AdminToken, map1);
+               APIResponse response1 = postRequestWithToken("rest/api/v1/organization",getAdminToken(), map1);
                int StatusCode1 = response1.status();
                System.out.println("StatusCode1--->" + StatusCode1);
 
@@ -73,7 +73,7 @@ public class Master extends BaseClass {
                map2.put("organiCode", "HDFC");
                map2.put("promoCe", "Common");
                map2.put("status", "Active");
-               APIResponse response2 = postRequestWithToken("rest/api/v1/organization", AdminToken, map2);
+               APIResponse response2 = postRequestWithToken("rest/api/v1/organization", getAdminToken(), map2);
                int StatusCode2 = response2.status();
                System.out.println("StatusCode2--->" + StatusCode2);
                System.out.println(getBodyData(response2).toString());
@@ -144,7 +144,7 @@ public class Master extends BaseClass {
                     map3.put("promoCodeType", promoCodeType.get(i));
                     map3.put("status", status.get(i));
 
-                    APIResponse response3 = postRequestWithToken("rest/api/v1/organization", AdminToken, map3);
+                    APIResponse response3 = postRequestWithToken("rest/api/v1/organization", getAdminToken(), map3);
                     int StatusCode3 = response3.status();
                     System.out.println("StatusCode3--->" + StatusCode3);
 
@@ -180,7 +180,7 @@ public class Master extends BaseClass {
                map4.put("organizationCode", toReadDataFromExcel("Master", 2, 1) + "L");
                map4.put("promoCodeType", "Common");
                map4.put("status", "Active");
-               APIResponse response4 = postRequestWithToken("rest/api/v1/organization", ExpiredAdminToken, map4);
+               APIResponse response4 = postRequestWithToken("rest/api/v1/organization", getAdminToken(), map4);
                int StatusCode4 = response4.status();
                System.out.println("StatusCode4--->" + StatusCode4);
                try {
@@ -197,7 +197,7 @@ public class Master extends BaseClass {
                }
 
                // <------------ Master_TC_07 ---------->
-               APIResponse response5 = postRequestWithToken("rest/api/v1/organization", CMToken, map1);
+               APIResponse response5 = postRequestWithToken("rest/api/v1/organization", getCMToken(), map1);
                int StatusCode5 = response5.status();
                System.out.println("StatusCode5--->" + StatusCode5);
                try {
@@ -228,7 +228,7 @@ public class Master extends BaseClass {
                map1.put("status", "Active");
                map1.put("id", toReadDataFromExcel("Master", 3, 1));
 
-               APIResponse response1 = putRequestWithToken("rest/api/v1/organization", AdminToken, map1);
+               APIResponse response1 = putRequestWithToken("rest/api/v1/organization", getAdminToken(), map1);
                int StatusCode1 = response1.status();
                System.out.println("StatusCode1--->" + StatusCode1);
 
@@ -271,7 +271,7 @@ public class Master extends BaseClass {
                map2.put("promoCe", "Common");
                map2.put("status", "Active");
                map2.put("id", toReadDataFromExcel("Master", 3, 1));
-               APIResponse response2 = putRequestWithToken("rest/api/v1/organization", AdminToken, map2);
+               APIResponse response2 = putRequestWithToken("rest/api/v1/organization", getAdminToken(), map2);
                int StatusCode2 = response2.status();
                System.out.println("StatusCode2--->" + StatusCode2);
                System.out.println(getBodyData(response2).toString());
@@ -353,7 +353,7 @@ public class Master extends BaseClass {
                createMap.put("organizationCode", toReadDataFromExcel("Master", 2, 1) + "K");
                createMap.put("promoCodeType", "Common");
                createMap.put("status", "Active");
-               APIResponse createOrganization = postRequestWithToken("rest/api/v1/organization", AdminToken, createMap);
+               APIResponse createOrganization = postRequestWithToken("rest/api/v1/organization", getAdminToken(), createMap);
                int createStatus = createOrganization.status();
                System.out.println("createStatus--->" + createStatus);
                if (createStatus == 200) {
@@ -369,7 +369,7 @@ public class Master extends BaseClass {
                          System.out.println("promoCodeType1--->" + promoCodeType1.get(i));
                          System.out.println("status--->" + status.get(i));
                          System.out.println("id--->" + id.get(i));
-                         APIResponse response3 = postRequestWithToken("rest/api/v1/organization", AdminToken, map3);
+                         APIResponse response3 = postRequestWithToken("rest/api/v1/organization", getAdminToken(), map3);
                          int StatusCode3 = response3.status();
                          System.out.println("StatusCode3--->" + StatusCode3);
 
@@ -408,7 +408,7 @@ public class Master extends BaseClass {
                map3.put("promoCodeType", "Common");
                map3.put("status", "Active");
                map3.put("id", toReadDataFromExcel("Master", 3, 1));
-               APIResponse response3 = putRequestWithToken("rest/api/v1/organization", ExpiredAdminToken, map3);
+               APIResponse response3 = putRequestWithToken("rest/api/v1/organization", getAdminToken(), map3);
                int StatusCode3 = response3.status();
                System.out.println("StatusCode3--->" + StatusCode3);
                System.out.println(getBodyData(response3).toString());
@@ -432,7 +432,7 @@ public class Master extends BaseClass {
                map4.put("promoCodeType", "Common");
                map4.put("status", "Active");
                map4.put("id", toReadDataFromExcel("Master", 3, 1));
-               APIResponse response4 = putRequestWithToken("rest/api/v1/organization", CMToken, map4);
+               APIResponse response4 = putRequestWithToken("rest/api/v1/organization", getCMToken(), map4);
                int StatusCode4 = response4.status();
                System.out.println("StatusCode4--->" + StatusCode4);
                System.out.println(getBodyData(response4).toString());
@@ -455,7 +455,7 @@ public class Master extends BaseClass {
      public void getOrganizationList() {
           try {
                APIResponse response1 = request().get(DevOrigin + "rest/api/v1/organizationss", RequestOptions.create()
-                         .setQueryParam("page", "0").setQueryParam("value", "").setHeader("Authorization", AdminToken));
+                         .setQueryParam("page", "0").setQueryParam("value", "").setHeader("Authorization", getAdminToken()));
                int StstusCode1 = response1.status();
                System.out.println("StstusCode1--->" + StstusCode1);
 
@@ -492,7 +492,7 @@ public class Master extends BaseClass {
                // <----------Master_TC_18------>
                APIResponse response2 = request().get(DevOrigin + "rest/api/v1/organizationss", RequestOptions.create()
                          .setQueryParam("page", "0").setQueryParam("value", "")
-                         .setHeader("Authorization", ExpiredAdminToken));
+                         .setHeader("Authorization", getAdminToken()));
                int StstusCode2 = response2.status();
                System.out.println("StstusCode2--->" + StstusCode2);
                try {
@@ -504,7 +504,7 @@ public class Master extends BaseClass {
 
                // <----------Master_TC_19------>
                APIResponse response3 = request().get(DevOrigin + "rest/api/v1/organizationss", RequestOptions.create()
-                         .setQueryParam("page", "0").setQueryParam("value", "").setHeader("Authorization", CMToken));
+                         .setQueryParam("page", "0").setQueryParam("value", "").setHeader("Authorization", getCMToken()));
                int StstusCode3 = response3.status();
                System.out.println("StstusCode3--->" + StstusCode3);
                try {
@@ -516,7 +516,7 @@ public class Master extends BaseClass {
 
                // <----------Master_TC_20------>
                APIResponse response4 = request().get(DevOrigin + "rest/api/v1/organizationss", RequestOptions.create()
-                         .setQueryParam("pe", "0").setQueryParam("vue", "").setHeader("Authorization", CMToken));
+                         .setQueryParam("pe", "0").setQueryParam("vue", "").setHeader("Authorization", getCMToken()));
                int StstusCode4 = response4.status();
                System.out.println("StstusCode4--->" + StstusCode4);
                try {
@@ -534,7 +534,7 @@ public class Master extends BaseClass {
                     APIResponse response5 = request().get(DevOrigin + "rest/api/v1/organizationss",
                               RequestOptions.create()
                                         .setQueryParam("page", page.get(i)).setQueryParam("value", "")
-                                        .setHeader("Authorization", AdminToken));
+                                        .setHeader("Authorization", getAdminToken()));
                     int StstusCode5 = response5.status();
                     System.out.println("StstusCode5--->" + StstusCode5);
                     try {
@@ -585,7 +585,7 @@ public class Master extends BaseClass {
           map1.put("screens", screens);
           map1.put("status", "Active");
 
-          APIResponse response1=postRequestWithToken("rest/api/v1/subscriptionPlan", AdminToken, map1);
+          APIResponse response1=postRequestWithToken("rest/api/v1/subscriptionPlan", getAdminToken(), map1);
           int StatusCode1=response1.status();
           System.out.println("StatusCode1--->"+StatusCode1);
 
@@ -621,7 +621,7 @@ public class Master extends BaseClass {
           }
 
           // <--------- Master_TC_25 -------------->
-          APIResponse response2=postRequestWithToken("rest/api/v1/subscriptionPlan", ExpiredAdminToken, map1);
+          APIResponse response2=postRequestWithToken("rest/api/v1/subscriptionPlan", getAdminToken(), map1);
           int StatusCode2=response2.status();
           System.out.println("StatusCode2--->"+StatusCode2);
           try {
@@ -632,7 +632,7 @@ public class Master extends BaseClass {
           }
 
           // <--------- Master_TC_26 -------------->
-          APIResponse response3=postRequestWithToken("rest/api/v1/subscriptionPlan", CMToken, map1);
+          APIResponse response3=postRequestWithToken("rest/api/v1/subscriptionPlan", getCMToken(), map1);
           int StatusCode3=response3.status();
           System.out.println("StatusCode3--->"+StatusCode3);
           try {
@@ -678,7 +678,7 @@ public class Master extends BaseClass {
           map2.put("screens", screens);
           map2.put("status", status.get(i));
 
-          APIResponse response5=postRequestWithToken("rest/api/v1/subscriptionPlan", AdminToken, map2);
+          APIResponse response5=postRequestWithToken("rest/api/v1/subscriptionPlan", getAdminToken(), map2);
           int StatusCode5=response5.status();
           System.out.println("StatusCode5--->"+StatusCode5);
           try {
