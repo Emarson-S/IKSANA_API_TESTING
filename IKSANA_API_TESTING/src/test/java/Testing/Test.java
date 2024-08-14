@@ -144,7 +144,7 @@ public class Test {
     // }
 
 
-    // Add Caregiver profiledetails
+    // Add Caregiver profile details
 
     // {
     //     "user": {
