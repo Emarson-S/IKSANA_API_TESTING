@@ -3,7 +3,7 @@ package Testing;
 public class Test {
 
 
-    // Admin Profile json
+    // Admin Profile update json
 
     // {
     //     "user": {
@@ -39,7 +39,7 @@ public class Test {
     // }
 
 
-    // Channel partner profile json
+    // Channel partner profile update json
 
     // {
     //     "user": {
