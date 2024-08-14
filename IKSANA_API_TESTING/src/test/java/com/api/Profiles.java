@@ -161,7 +161,7 @@ public class Profiles extends BaseClass {
 
     }
 
-    // Channel partner Profile update
+    // Channel partner Profile update API
 
     @Test(enabled = true, description = "Profile", priority = 2)
     public void updateCPProfile() throws IOException {
@@ -325,7 +325,7 @@ public class Profiles extends BaseClass {
 
     }
 
-    // Care Manager Profile update
+    // Care Manager Profile update API
 
     @Test(enabled = true, description = "Profile", priority = 3)
     public void updateCMProfile() throws IOException {
