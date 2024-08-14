@@ -90,4 +90,87 @@ public class Test {
     //     "veterans": null
     // }
 
+
+    
+    // Caregiver Profile update json
+
+    // {
+    //     "user": {
+    //         "abhaNumber": null,
+    //         "roleId": "1657715657753",
+    //         "userId": "1717565354608",
+    //         "imageUrl": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1717565354608/8fbb9677-9f3e-4bbe-8bd7-84ca5bef69d2",
+    //         "title": "Mr",
+    //         "firstName": "Alice",
+    //         "lastName": "T",
+    //         "gender": "Female",
+    //         "dateOfBirth": "05-06-1989",
+    //         "age": 35,
+    //         "email": "Alice-CG@yopmail.com",
+    //         "govtType": "Pan Card",
+    //         "govtId": "dyhhg57ghv",
+    //         "govtProof": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1717565354608/c09fb95d-213d-4ba1-a8ff-f577c4cfa2b7",
+    //         "countryCode": "+91",
+    //         "phoneNo": "8400000005",
+    //         "emergencyContactNo": "",
+    //         "address": "No 5",
+    //         "address1": "ram nagar",
+    //         "country": "IN",
+    //         "state": "KL",
+    //         "city": "CH",
+    //         "pinCode": "754345",
+    //         "territory": "EG",
+    //         "degree": null,
+    //         "aboutYourShelf": null
+    //     },
+    //     "userOnboardData": {
+    //         "createdOn": "2024-06-05T11:37:08.018",
+    //         "modifiedOn": "2024-06-28T11:04:31.564",
+    //         "createdBy": "Alice-CG@yopmail.com",
+    //         "modifiedBy": "Alice-CG@yopmail.com",
+    //         "versionNo": 9,
+    //         "careTakerId": "1717567627982",
+    //         "userId": "1717565354608",
+    //         "status": "Active",
+    //         "personalDetails": null,
+    //         "professionalDetails": {
+    //             "degree": "DE0004",
+    //             "specialty": "SP0002",
+    //             "specialSkills": "SP0011",
+    //             "aboutYourShelf": "caregiver",
+    //             "registrationYear": "2016",
+    //             "registrationNumber": "6435679534",
+    //             "registrationType": "Central",
+    //             "registrationBoard": "Medical Council Of India"
+    //         },
+    //         "schedule": {
+    //             "daysAvailable": [
+    //                 {
+    //                     "mon": true,
+    //                     "tue": true,
+    //                     "wed": true,
+    //                     "thu": true,
+    //                     "fri": true,
+    //                     "sat": true,
+    //                     "sun": true
+    //                 }
+    //             ],
+    //             "startTime": "08:35 AM",
+    //             "endTime": "11:35 PM"
+    //         },
+    //         "clinicDetails": {
+    //             "clinic": "2",
+    //             "clinicName": "",
+    //             "contactNo": "",
+    //             "emailId": "",
+    //             "address": ""
+    //         },
+    //         "govtType": "Pan Card",
+    //         "govtId": "dyhhg57ghv",
+    //         "govtProof": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1717565354608/c09fb95d-213d-4ba1-a8ff-f577c4cfa2b7",
+    //         "user": null
+    //     },
+    //     "veterans": null
+    // }
+
 }
