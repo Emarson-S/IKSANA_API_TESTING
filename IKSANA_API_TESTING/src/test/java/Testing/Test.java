@@ -90,4 +90,57 @@ public class Test {
     //     "veterans": null
     // }
 
+
+
+    // Care manager profile update json
+
+    // {
+    //     "user": {
+    //         "abhaNumber": null,
+    //         "roleId": "1657316081487",
+    //         "userId": "1714459519035",
+    //         "imageUrl": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1714459519035/fd1e8d43-46fd-48d5-9bf1-92edc7532897",
+    //         "title": "Mr",
+    //         "firstName": "Andrew kaliyugan perumal",
+    //         "lastName": "Ananad",
+    //         "gender": "Male",
+    //         "dateOfBirth": "19-04-2000",
+    //         "age": 24,
+    //         "email": "Andrew@yopmail.com",
+    //         "govtType": "Driving License",
+    //         "govtId": "1212312313123123",
+    //         "govtProof": null,
+    //         "countryCode": "+91",
+    //         "phoneNo": "8400000003",
+    //         "emergencyContactNo": "",
+    //         "address": "No 87",
+    //         "address1": "ram nagar",
+    //         "country": "IN",
+    //         "state": "KL",
+    //         "city": "KZ",
+    //         "pinCode": "567557",
+    //         "territory": "TR",
+    //         "degree": "DE0006",
+    //         "aboutYourShelf": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum."
+    //     },
+    //     "userOnboardData": {
+    //         "createdOn": "2024-04-30T12:17:49.273",
+    //         "modifiedOn": "2024-07-19T17:49:55.717",
+    //         "createdBy": "Andrew@yopmail.com",
+    //         "modifiedBy": "Andrew@yopmail.com",
+    //         "versionNo": 14,
+    //         "careManagerId": "1714459669232",
+    //         "userId": "1714459519035",
+    //         "personalDetails": null,
+    //         "aboutYourShelf": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.",
+    //         "status": "Active",
+    //         "degree": "DE0006",
+    //         "govtType": "Driving License",
+    //         "govtId": "1212312313123123",
+    //         "govtProof": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1714459519035/d201619a-4afa-4487-a6b3-6d3e9c0909f8",
+    //         "user": null
+    //     },
+    //     "veterans": null
+    // }
+
 }
