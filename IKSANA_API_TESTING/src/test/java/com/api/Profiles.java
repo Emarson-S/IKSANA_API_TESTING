@@ -14,7 +14,7 @@ import com.microsoft.playwright.APIResponse;
 
 public class Profiles extends BaseClass {
 
-    // Admin profile Update
+    // Admin profile Update API
 
     @Test(enabled = true, description = "Profile", priority = 1)
     public void updateAdminProfile() throws IOException {
