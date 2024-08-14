@@ -325,4 +325,168 @@ public class Profiles extends BaseClass {
 
     }
 
+    // Care Manager Profile update
+
+    @Test(enabled = true, description = "Profile", priority = 3)
+    public void updateCMProfile() throws IOException {
+
+        Map<String, String> User = new HashMap<>();
+        User.put("firstName", toReadDataFromExcel("Profile", 1, 7));
+        User.put("lastName", toReadDataFromExcel("Profile", 2, 7));
+        User.put("title", toReadDataFromExcel("Profile", 3, 7));
+        User.put("gender", toReadDataFromExcel("Profile", 4, 7));
+        User.put("dateOfBirth", toReadDataFromExcel("Profile", 5, 7));
+        User.put("age", toReadDataFromExcel("Profile", 6, 7));
+        User.put("address", toReadDataFromExcel("Profile", 7, 7));
+        User.put("address1", toReadDataFromExcel("Profile", 8, 7));
+        User.put("country", toReadDataFromExcel("Profile", 9, 7));
+        User.put("state", toReadDataFromExcel("Profile", 10, 7));
+        User.put("city", toReadDataFromExcel("Profile", 11, 7));
+        User.put("pinCode", toReadDataFromExcel("Profile", 12, 7));
+        User.put("territory", toReadDataFromExcel("Profile", 13, 7));
+        User.put("govtType", toReadDataFromExcel("Profile", 14, 7));
+        User.put("govtId", toReadDataFromExcel("Profile", 15, 7));
+        User.put("degree", toReadDataFromExcel("Profile", 23, 7));
+        User.put("imageUrl", toReadDataFromExcel("Profile", 26, 7));
+        User.put("aboutYourShelf", toReadDataFromExcel("Profile", 25, 7));
+        User.put("userId", toReadDataFromExcel("Users", 1, 5));
+        User.put("roleId", toReadDataFromExcel("Users", 3, 5));
+        User.put("email", toReadDataFromExcel("Users", 5, 5));
+        User.put("countryCode", "+91");
+        User.put("phoneNo", "7675456457");
+        User.put("govtProof", null);
+        User.put("abhaNumber", null);
+        User.put("emergencyContactNo", null);
+
+        Map<String, String> userOnboardData = new HashMap<>();
+        userOnboardData.put("degree", toReadDataFromExcel("Profile", 23, 7));
+        userOnboardData.put("aboutYourShelf", toReadDataFromExcel("Profile", 25, 7));
+        userOnboardData.put("govtType", toReadDataFromExcel("Profile", 14, 7));
+        userOnboardData.put("govtId", toReadDataFromExcel("Profile", 15, 7));
+        userOnboardData.put("userId", toReadDataFromExcel("Users", 1, 5));
+        userOnboardData.put("status", "Active");
+        userOnboardData.put("govtProof",
+                "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716989670177/ae2f80ec-0a17-47ad-bf59-9d49cf4e08dd");
+        userOnboardData.put("personalDetails", null);
+        userOnboardData.put("user", null);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("user", User);
+        map.put("userOnboardData", userOnboardData);
+        map.put("veterans", null);
+
+        APIResponse response1 = postRequestWithToken("rest/api/v1/updateMyProfile", getCMToken(), map);
+        int StatusCode1 = response1.status();
+        System.out.println("StatusCode1 " + StatusCode1);
+        
+
+        // <--------- Profile_TC_13 --------------->
+
+        try {
+            Assert.assertEquals(StatusCode1, 200);
+            resultsCreateNewCell("Profile", 13, 10, "Pass");
+        } catch (AssertionError e) {
+            resultsCreateNewCell("Profile", 13, 10, "Fail");
+        }
+
+        // <----------------Profile_TC_14------------>
+
+        String s1 = getBodyData(response1).toString();
+        if (isJSONValid(s1)) {
+            resultsCreateNewCell("Profile", 14, 10, "Pass");
+        } else {
+            resultsCreateNewCell("Profile", 14, 10, "Fail");
+        }
+
+        // <----------------Profile_TC_15 ------------>
+
+        if (s1 != null && StatusCode1 == 200) {
+            JsonObject jsonObject1 = JsonParser.parseString(s1).getAsJsonObject();
+            String d1 = jsonObject1.get("code").getAsString();
+            if (d1 != null && d1.equals("0000")) {
+                resultsCreateNewCell("Profile", 15, 10, "Pass");
+            } else {
+                resultsCreateNewCell("Profile", 15, 10, "Fail");
+            }
+        } else {
+            resultsCreateNewCell("Profile", 15, 10, "Fail");
+        }
+
+        APIResponse response2 = postRequestWithToken("rest/api/v1/updateMyProfile",getDRToken(), map);
+        int StatusCode2 = response2.status();
+        System.out.println("StatusCode2 " + StatusCode2);
+        
+        // <--------- Profile_TC_16 --------------->
+
+        try {
+            Assert.assertEquals(StatusCode2, 200);
+            String s2 = getBodyData(response2).toString();
+            if (s2 != null && StatusCode2 == 200) {
+                JsonObject jsonObject1 = JsonParser.parseString(s2).getAsJsonObject();
+                String d1 = jsonObject1.get("code").getAsString();
+                if (d1 != null && d1.equals("1111")) {
+                    resultsCreateNewCell("Profile", 16, 10, "Pass");
+                } else {
+                    resultsCreateNewCell("Profile", 16, 10, "Fail");
+                }
+            } else {
+                resultsCreateNewCell("Profile", 16, 10, "Fail");
+            }
+        } catch (AssertionError e) {
+            resultsCreateNewCell("Profile", 16, 10, "Fail");
+        }
+
+        APIResponse response3 = postRequestWithToken("rest/api/v1/updateMyProfile", toReadDataFromExcel("Users", 4, 5),map);
+        int StatusCode3 = response3.status();
+        System.out.println("StatusCode3 " + StatusCode3);
+        System.out.println(getBodyData(response3).toPrettyString());
+
+        // <--------- Profile_TC_17 --------------->
+
+        try {
+            Assert.assertEquals(StatusCode3, 504);
+            resultsCreateNewCell("Profile", 17, 10, "Pass");
+        } catch (AssertionError e) {
+            resultsCreateNewCell("Profile", 17, 10, "Fail");
+
+        }
+
+        Map<String, String> User1 = new HashMap<>();
+        User1.put("firstName", toReadDataFromExcel("Profile", 1, 7));
+        User1.put("lastName", toReadDataFromExcel("Profile", 2, 7));
+        User1.put("userId", toReadDataFromExcel("Users", 1, 5));
+        User1.put("roleId", toReadDataFromExcel("Users", 3, 5));
+        User1.put("email", toReadDataFromExcel("Users", 5, 5));
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("user", User1);
+        map1.put("userOnboardData", userOnboardData);
+        map1.put("veterans", null);
+
+        APIResponse response4 = postRequestWithToken("rest/api/v1/updateMyProfile", getCMToken(), map1);
+        int StatusCode4 = response4.status();
+        System.out.println("StatusCode4 " + StatusCode4);
+        System.out.println(getBodyData(response4).toPrettyString());
+
+        // <--------- Profile_TC_18 --------------->
+
+        try {
+            Assert.assertEquals(StatusCode4, 200);
+            String s2 = getBodyData(response4).toString();
+            if (s2 != null && StatusCode4 == 200) {
+                JsonObject jsonObject1 = JsonParser.parseString(s2).getAsJsonObject();
+                String d1 = jsonObject1.get("code").getAsString();
+                if (d1 != null && d1.equals("1111")) {
+                    resultsCreateNewCell("Profile", 18, 10, "Pass");
+                } else {
+                    resultsCreateNewCell("Profile", 18, 10, "Fail");
+                }
+            } else {
+                resultsCreateNewCell("Profile", 18, 10, "Fail");
+            }
+        } catch (AssertionError e) {
+            resultsCreateNewCell("Profile", 18, 10, "Fail");
+        }
+
+    }
+
 }
