@@ -591,14 +591,11 @@ public void updateDRProfile() throws IOException {
     userOnboardData.put("govtProof",
             "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716989670177/ae2f80ec-0a17-47ad-bf59-9d49cf4e08dd");
     userOnboardData.put("personalDetails", personalDetails);
-    userOnboardData.put("personalDetails", professionalDetails);
-    userOnboardData.put("personalDetails", clinicDetails);
-    userOnboardData.put("personalDetails", setSchedule);
+    userOnboardData.put("professionalDetails", professionalDetails);
+    userOnboardData.put("clinicDetails", clinicDetails);
+    userOnboardData.put("setSchedule", setSchedule);
     userOnboardData.put("user", null);
-
-
-
-
+     
     Map<String, Object> map = new HashMap<>();
     map.put("user", User);
     map.put("userOnboardData", userOnboardData);
