@@ -144,7 +144,7 @@ public class Test {
     // }
 
 
-    // Add Caregiver profiledetails
+    // Add Caregiver profile details
 
     // {
     //     "user": {
@@ -224,5 +224,10 @@ public class Test {
     //     },
     //     "veterans": null
     // }
+
+
+    // Doctor profile update API
+
+    
 
 }
