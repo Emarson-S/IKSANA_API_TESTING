@@ -227,6 +227,114 @@ public class Test {
 
     // Doctor profile update API
 
+    // {
+    //     "user": {
+    //         "abhaNumber": null,
+    //         "roleId": "1657702685782",
+    //         "userId": "1716993311801",
+    //         "imageUrl": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716993311801/939d463c-a3e3-44cd-abbe-e3f774048936",
+    //         "title": "Mrs",
+    //         "firstName": "Anthony",
+    //         "lastName": "R",
+    //         "gender": "Male",
+    //         "dateOfBirth": "01-01-1964",
+    //         "age": 60,
+    //         "email": "Anthony-DR@yopmail.com",
+    //         "govtType": "Passport No",
+    //         "govtId": "fdghgyfthb",
+    //         "govtProof": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716993311801/0141d630-e7ea-4ec9-9fee-926840f78752",
+    //         "countryCode": "+91",
+    //         "phoneNo": "8400000004",
+    //         "emergencyContactNo": null,
+    //         "address": "No 54",
+    //         "address1": "Chennai Park",
+    //         "country": "IN",
+    //         "state": "TN",
+    //         "city": "CH",
+    //         "pinCode": "654675",
+    //         "territory": "EG",
+    //         "degree": null,
+    //         "aboutYourShelf": null
+    //     },
+    //     "userOnboardData": {
+    //         "createdOn": "2024-05-29T20:34:14.836",
+    //         "modifiedOn": "2024-08-01T15:20:10.154",
+    //         "createdBy": "Anthony-DR@yopmail.com",
+    //         "modifiedBy": "Anthony-DR@yopmail.com",
+    //         "versionNo": 47,
+    //         "doctorId": 1716995054822,
+    //         "userId": "1716993311801",
+    //         "personalDetails": {
+    //             "title": "Mrs",
+    //             "profilePicture": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716993311801/939d463c-a3e3-44cd-abbe-e3f774048936",
+    //             "firstName": "Anthony",
+    //             "lastName": "R",
+    //             "gender": "Male",
+    //             "dateOfBirth": "01-01-1964",
+    //             "age": "60",
+    //             "phoneNo": "8400000004",
+    //             "countryCode": "+91",
+    //             "email": "Anthony-DR@yopmail.com",
+    //             "emergencyContactNo": null,
+    //             "address": {
+    //                 "address1": "No 54",
+    //                 "address2": "Chennai Park",
+    //                 "state": "TN",
+    //                 "city": "CH",
+    //                 "country": "IN",
+    //                 "pinCode": "654675",
+    //                 "territory": "EG",
+    //                 "latitude": null,
+    //                 "longitude": null,
+    //                 "landMark": null
+    //             },
+    //             "govtType": "Passport No",
+    //             "govtId": "fdghgyfthb",
+    //             "govtProof": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716993311801/0141d630-e7ea-4ec9-9fee-926840f78752",
+    //             "aboutYourShelf": null,
+    //             "degree": null
+    //         },
+    //         "professionalDetails": {
+    //             "degree": "DE0005",
+    //             "specialty": "SP0005",
+    //             "specialSkills": null,
+    //             "aboutYourShelf": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsufwef",
+    //             "registrationYear": "2018",
+    //             "registrationNumber": "6454674367546746",
+    //             "registrationType": "Central",
+    //             "registrationBoard": "Dental Council Of India"
+    //         },
+    //         "clinicDetails": {
+    //             "clinic": "2",
+    //             "clinicName": "",
+    //             "contactNo": "",
+    //             "emailId": "",
+    //             "address": ""
+    //         },
+    //         "setSchedule": {
+    //             "daysAvailable": [
+    //                 {
+    //                     "mon": true,
+    //                     "tue": true,
+    //                     "wed": true,
+    //                     "thu": true,
+    //                     "fri": true,
+    //                     "sat": true,
+    //                     "sun": true
+    //                 }
+    //             ],
+    //             "startTime": "06:00 AM",
+    //             "endTime": "10:00 PM"
+    //         },
+    //         "status": "Active",
+    //         "govtType": "Passport No",
+    //         "govtId": "fdghgyfthb",
+    //         "govtProof": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716993311801/0141d630-e7ea-4ec9-9fee-926840f78752",
+    //         "user": null
+    //     },
+    //     "veterans": null
+    // }
+
     // Veteran profile details API
 
 
