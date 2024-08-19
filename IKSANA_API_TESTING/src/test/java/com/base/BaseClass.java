@@ -191,7 +191,8 @@ public class BaseClass {
 	public static String toReadDataFromExcel(String sheetName, int rowNo, int cellNo)
 			throws IOException {
 
-		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_Inputs.xlsx");
+		String fileLocation=folderLocation();		
+		File f = new File(fileLocation+"\\Iksana_Inputs.xlsx");
 		FileInputStream fin = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fin);
 		Sheet sh = b.getSheet(sheetName);
@@ -216,7 +217,9 @@ public class BaseClass {
 	public static String resultsReadDataFromExcel(String sheetName, int rowNo, int cellNo)
 			throws IOException {
 
-		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_API_Testing_Testcases_v0.1.xlsx");
+
+        String fileLocation=folderLocation();
+		File f = new File(fileLocation+"\\Iksana_API_Testing_Testcases_v0.1.xlsx");
 		FileInputStream fin = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fin);
 		Sheet sh = b.getSheet(sheetName);
@@ -361,4 +364,32 @@ public class BaseClass {
 		return true;
 	}
 
+
+	// Find Folder Locations
+
+	public static String folderLocation() {
+        File folder = new File("Files");
+
+        
+        if (folder.exists() && folder.isDirectory()) {
+            String folderLocation = folder.getAbsolutePath();
+
+            // File[] files = folder.listFiles();
+            // if (files != null) {
+            //     System.out.println("Files in the folder:");
+            //     for (File file : files) {
+            //         System.out.println(file.getName());
+            //     }
+            // } else {
+            //     System.out.println("The folder is empty or an I/O error occurred.");
+            // }
+
+			return folderLocation;
+
+        } else {
+            System.out.println("The folder does not exist or is not a directory.");
+        }
+		return null;
+    }
 }
+
