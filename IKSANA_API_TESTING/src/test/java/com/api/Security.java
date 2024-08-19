@@ -460,9 +460,8 @@ public class Security extends BaseClass {
         }
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testlogin() throws IOException {
-        String s = null;
-        System.err.println(isJSONValid(s));
+        folderLocation();
     }
 }
