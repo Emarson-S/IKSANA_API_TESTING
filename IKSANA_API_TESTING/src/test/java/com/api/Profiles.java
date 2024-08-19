@@ -719,7 +719,7 @@ public class Profiles extends BaseClass {
     }
 
 
-    // Caregiver Profiile update API
+    // Caregiver Profile update API
 
     @Test(enabled = true, description = "Profile", priority = 4)
     public void updateCTProfile() throws IOException {
