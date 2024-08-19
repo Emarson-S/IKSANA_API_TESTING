@@ -133,7 +133,8 @@ public class BaseClass {
 	// create new Excel Sheet
 	public static void tocreateExcelSheet(String fileName, String sheetName, int rowNo, int cellNo, String value)
 			throws IOException {
-		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_Inputs\\" + fileName + ".xlsx");
+		String fileLocation=folderLocation();
+		File f = new File(fileLocation+"\\Iksana_Inputs\\" + fileName + ".xlsx");
 		FileInputStream fil = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fil);
 		Sheet sh = b.createSheet(sheetName);
@@ -148,7 +149,8 @@ public class BaseClass {
 	// create new row in old Sheet
 	public static void toCreateNewRow(String sheetName, int rowNo, int cellNo, String value)
 			throws IOException {
-		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_Inputs.xlsx");
+		String fileLocation=folderLocation();		
+		File f = new File(fileLocation+"\\Iksana_Inputs.xlsx");
 		FileInputStream fil = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fil);
 		Sheet sh = b.getSheet(sheetName);
@@ -164,7 +166,8 @@ public class BaseClass {
 
 	public static void toCreateNewCell(String sheetName, int rowNo, int cellNo, String value)
 			throws IOException {
-		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_Inputs.xlsx");
+		String fileLocation=folderLocation();
+		File f = new File(fileLocation+"\\Iksana_Inputs.xlsx");
 		FileInputStream fil = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fil);
 		Sheet sh = b.getSheet(sheetName);
@@ -177,7 +180,8 @@ public class BaseClass {
 
 	public static void resultsCreateNewCell(String sheetName, int rowNo, int cellNo, String value)
 			throws IOException {
-		File f = new File("D:\\API_TEST\\IKSANA_API_TESTING\\Files\\Iksana_API_Testing_Testcases_v0.1.xlsx");
+		String fileLocation=folderLocation();
+		File f = new File(fileLocation+"\\Iksana_API_Testing_Testcases_v0.1.xlsx");
 		FileInputStream fil = new FileInputStream(f);
 		Workbook b = new XSSFWorkbook(fil);
 		Sheet sh = b.getSheet(sheetName);
