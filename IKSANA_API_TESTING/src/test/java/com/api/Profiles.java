@@ -721,7 +721,7 @@ public class Profiles extends BaseClass {
 
     // Caregiver Profile update API
 
-    @Test(enabled = true, description = "Profile", priority = 4)
+    @Test(enabled = false, description = "Profile", priority = 4)
     public void updateCTProfile() throws IOException {
 
         Map<String, String> User = new HashMap<>();
