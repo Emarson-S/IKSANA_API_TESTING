@@ -835,7 +835,5 @@ public class Test {
     //     "veterans": null
     // }
 
-    // Subscribed veteran profile update json
-
   
 }
