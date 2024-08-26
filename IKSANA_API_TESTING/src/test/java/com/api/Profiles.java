@@ -902,7 +902,6 @@ public class Profiles extends BaseClass {
             resultsCreateNewCell("Profile", 23, 10, "Pass");
         } catch (AssertionError e) {
             resultsCreateNewCell("Profile", 23, 10, "Fail");
-
         }
 
         Map<String, String> User1 = new HashMap<>();
