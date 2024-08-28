@@ -836,7 +836,88 @@ public class Test {
     // }
 
     // Subscribed veteran profile API
+
+    // Subscribed family profile API
+
+     // {
+    //     "user": {
+    //         "abhaNumber": null,
+    //         "roleId": "1666105467297",
+    //         "userId": "1720681697436",
+    //         "imageUrl": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716989670177/0ef7068c-65c2-454f-92f6-ce8fa1023e84",
+    //         "title": "Mr",
+    //         "firstName": "Nicolas",
+    //         "lastName": "Savary",
+    //         "gender": "Male",
+    //         "dateOfBirth": "08-05-2000",
+    //         "age": 24,
+    //         "email": "Nicolas-FM@yopmail.com",
+    //         "govtType": "Aadhar Card",
+    //         "govtId": "735323452354",
+    //         "govtProof": null,
+    //         "countryCode": "+91",
+    //         "phoneNo": "9000000067",
+    //         "emergencyContactNo": null,
+    //         "address": "No 6, Ram nagar, Second cross street,  Egmore, Chennai, Tamilnadu, India - 674567",
+    //         "address1": null,
+    //         "country": null,
+    //         "state": null,
+    //         "city": null,
+    //         "pinCode": null,
+    //         "territory": null,
+    //         "degree": null,
+    //         "aboutYourShelf": null
+    //     },
+    //     "userOnboardData": {
+    //         "createdOn": null,
+    //         "modifiedOn": "2024-07-11T12:38:17.418",
+    //         "createdBy": null,
+    //         "modifiedBy": "Anthony-DR@yopmail.com",
+    //         "versionNo": 2,
+    //         "caregiverId": 1720680312642,
+    //         "fullName": null,
+    //         "status": null,
+    //         "veteranId": null,
+    //         "primaryPerson": true,
+    //         "address": {
+    //             "address1": "No 6, Ram nagar, Second cross street,  Egmore, Chennai, Tamilnadu, India - 674567",
+    //             "address2": null,
+    //             "state": null,
+    //             "city": null,
+    //             "country": null,
+    //             "pinCode": null,
+    //             "territory": null,
+    //             "latitude": null,
+    //             "longitude": null,
+    //             "landMark": null
+    //         },
+    //         "age": "24",
+    //         "dateOfBirth": "08-05-2000",
+    //         "phoneNo": "9000000067",
+    //         "email": "Nicolas-FM@yopmail.com",
+    //         "emergencyContactNo": null,
+    //         "enquiryId": "1720680258839",
+    //         "title": "Mr",
+    //         "userId": "1720681697436",
+    //         "profilePhoto": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716989670177/0ef7068c-65c2-454f-92f6-ce8fa1023e84",
+    //         "firstName": "Nicolas",
+    //         "lastName": "Savary",
+    //         "relationship": "Father",
+    //         "countryCode": "+91",
+    //         "gender": "Male",
+    //         "govtType": "Aadhar Card",
+    //         "govtId": "735323452354",
+    //         "govtProof": "https://s3-dev-iksana-files-images.s3.ap-south-1.amazonaws.com/1716989670177/cdcd353e-ca27-44d8-9505-4c214f5a4685",
+    //         "regitrationId": null,
+    //         "result": null,
+    //         "altcountrycode": null
+    //     },
+    //     "veterans": null
+    // }
+
+
     
+
 
   
 }
